@@ -1,5 +1,5 @@
 import Image from "../components/Image";
-import LatestBook from "../components/LeatestBook/LeatestBook";
+import LatestBook from "../components/LatestBook/LatestBook";
 
 
 const Home = () => {
