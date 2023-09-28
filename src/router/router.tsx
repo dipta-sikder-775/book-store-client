@@ -3,12 +3,29 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 const SignUp = lazy(() => import("../pages/sign-up"));
 const SignIn = lazy(() => import("../pages/sign-in"));
+const Home = lazy(() => import("../pages/home"));
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
+      {
+        path: "/",
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <Home />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/home",
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <Home />
+          </Suspense>
+        ),
+      },
       {
         path: "/signup",
         element: (
