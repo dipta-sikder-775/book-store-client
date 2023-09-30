@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div>
       <Image
-        className="w-full"
+        className="w-full h-[40vh] ob"
         src="https://i.ibb.co/94jDjq8/home-banner.jpg"
       />
 
