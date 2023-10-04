@@ -2,6 +2,7 @@ import { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 
+const UpdateBookPage = lazy(() => import("../pages/update-book-page"));
 const AddNewBookPage = lazy(() => import("../pages/add-new-book"));
 const WishlistPage = lazy(() => import("../pages/wishlist"));
 const BooksPage = lazy(() => import("../pages/books"));
@@ -56,8 +57,20 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/update-book/:id",
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <UpdateBookPage />
+          </Suspense>
+        ),
+      },
+      {
         path: "/wishlist",
-        element: <WishlistPage />,
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <WishlistPage />
+          </Suspense>
+        ),
       },
       {
         path: "/signup",
