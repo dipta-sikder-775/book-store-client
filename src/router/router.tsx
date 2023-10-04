@@ -1,6 +1,8 @@
 import { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
+import PrivateRoute from "../components/PrivateRoute";
+import Loading from "../components/Loading";
 
 const UpdateBookPage = lazy(() => import("../pages/update-book"));
 const AddNewBookPage = lazy(() => import("../pages/add-new-book"));
@@ -19,7 +21,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Suspense fallback={<Loading />}>
             <Home />
           </Suspense>
         ),
@@ -27,7 +29,7 @@ const router = createBrowserRouter([
       {
         path: "/home",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Suspense fallback={<Loading />}>
             <Home />
           </Suspense>
         ),
@@ -35,47 +37,57 @@ const router = createBrowserRouter([
       {
         path: "/add-new-book",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
-            <AddNewBookPage />
-          </Suspense>
+          <PrivateRoute>
+            <Suspense fallback={<Loading />}>
+              <AddNewBookPage />
+            </Suspense>
+          </PrivateRoute>
         ),
       },
       {
         path: "/books",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
-            <BooksPage />,
-          </Suspense>
+          <PrivateRoute>
+            <Suspense fallback={<Loading />}>
+              <BooksPage />,
+            </Suspense>
+          </PrivateRoute>
         ),
       },
       {
         path: "/book-details/:id",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
-            <BookDetailsPage />
-          </Suspense>
+          <PrivateRoute>
+            <Suspense fallback={<Loading />}>
+              <BookDetailsPage />
+            </Suspense>
+          </PrivateRoute>
         ),
       },
       {
         path: "/update-book/:id",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
-            <UpdateBookPage />
-          </Suspense>
+          <PrivateRoute>
+            <Suspense fallback={<Loading />}>
+              <UpdateBookPage />
+            </Suspense>
+          </PrivateRoute>
         ),
       },
       {
         path: "/wishlist",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
-            <WishlistPage />
-          </Suspense>
+          <PrivateRoute>
+            <Suspense fallback={<Loading />}>
+              <WishlistPage />
+            </Suspense>
+          </PrivateRoute>
         ),
       },
       {
         path: "/signup",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Suspense fallback={<Loading />}>
             <SignUp />
           </Suspense>
         ),
@@ -83,7 +95,7 @@ const router = createBrowserRouter([
       {
         path: "/signin",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Suspense fallback={<Loading />}>
             <SignIn />
           </Suspense>
         ),
