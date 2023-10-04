@@ -11,28 +11,27 @@ import { useAppSelector } from "../redux/hooks";
 const WishlistPage = () => {
   const { token } = useAppSelector((state) => state.user);
   const { data, isLoading } = useGetWishlistQuery(token);
-  const [deleteWishlist, { isSuccess }] = useDeleteWishlistMutation();
+  const [deleteWishlist] = useDeleteWishlistMutation();
 
   if (isLoading) {
     return <Heading className="text-center text-2xl">Loading...</Heading>;
   }
   const wishlists = data?.data;
   console.log(wishlists);
-  const handleDelete = (id: string) => {
+  const handleDelete = async (id: string) => {
     const data = {
       id,
       token,
     };
-    deleteWishlist(data);
+    try {
+      toats.loading("Loading...", { id: "wishlist" });
+      await deleteWishlist(data).unwrap();
+      toats.success("Wishlist deleted", { id: "wishlist" });
+    } catch (error) {
+      toats.error("Failed to delete Wishlist", { id: "wishlist" });
+    }
   };
-  if (isSuccess) {
-    toats.success("Wishlist deleted", { id: "wishlist" });
-  }
-  // useEffect(() => {
-  //     if (isSuccess) {
-  //         toats.success('Wishlist deleted', { id: 'wishlist' })
-  //     }
-  // }, [isSuccess])
+
   return (
     <div>
       <Heading className="text-center text-3xl font-semibold mt-10">
@@ -47,6 +46,7 @@ const WishlistPage = () => {
                 src={wishlist?.bookId?.image?.fileUrl}
               />
             </div>
+            
             <div className="ml-4">
               <Heading className="mt-5 text-lg font-bold">
                 <span className="font-bold"> Title:</span>{" "}
@@ -58,6 +58,7 @@ const WishlistPage = () => {
                   <span className="font-bold"> Genre:</span>{" "}
                   {wishlist?.bookId?.genre}
                 </Paragraph>
+
                 <Paragraph className="">
                   <span className="font-bold"> Price:</span>{" "}
                   {wishlist?.bookId?.price}
