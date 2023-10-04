@@ -37,6 +37,7 @@ const WishlistPage = () => {
       <Heading className="text-center text-3xl font-semibold mt-10">
         Wishlist: {wishlists?.length}
       </Heading>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:w-4/5 md:mx-auto mx-3 my-10">
         {wishlists.map((wishlist: any) => (
           <div className="border-2 p-5 flex flex-col ">
@@ -46,7 +47,7 @@ const WishlistPage = () => {
                 src={wishlist?.bookId?.image?.fileUrl}
               />
             </div>
-            
+
             <div className="ml-4">
               <Heading className="mt-5 text-lg font-bold">
                 <span className="font-bold"> Title:</span>{" "}
