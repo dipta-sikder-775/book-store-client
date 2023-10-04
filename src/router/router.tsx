@@ -2,6 +2,7 @@ import { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 
+const WishlistPage = lazy(() => import("../pages/Wishlist"));
 const BooksPage = lazy(() => import("../pages/Books"));
 const BookDetailsPage = lazy(() => import("../pages/book-details"));
 const SignUp = lazy(() => import("../pages/sign-up"));
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/wishlist",
-        element: <Wishlist />,
+        element: <WishlistPage />,
       },
       {
         path: "/signup",
