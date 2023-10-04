@@ -13,6 +13,7 @@ import Input from "../components/Input";
 import Button from "../components/Button";
 import toast from "react-hot-toast";
 import { useAppSelector } from "../redux/hooks";
+import { useAddWishlistMutation } from "../redux/wishlist/wishlistApi";
 
 const BookDetails = () => {
   const { id } = useParams();
