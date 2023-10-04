@@ -19,7 +19,7 @@ const Footer = () => {
         <div>
           <Image
             className={"w-36"}
-            src={"https://i.ibb.co/68bYxQz/book-logo-removebg-preview.png"}
+            src={"/images.png"}
           />
 
           <Paragraph className="">
@@ -52,11 +52,11 @@ const Footer = () => {
 
         <div>
           <div className="">
-            <Heading className="text-2xl ml-5 text-[#0874c4]">Our Page</Heading>
+            <Heading className="text-2xl ml-5 text-[#ef7b00]">Our Page</Heading>
 
             <Paragraph
               className={
-                "mt-5 font-semibold hover:text-[#0874c4] duration-300 cursor-pointer"
+                "mt-5 font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer"
               }
             >
               Home
@@ -64,7 +64,7 @@ const Footer = () => {
 
             <Paragraph
               className={
-                "mt-5 font-semibold hover:text-[#0874c4] duration-300 cursor-pointer"
+                "mt-5 font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer"
               }
             >
               Books
@@ -72,7 +72,7 @@ const Footer = () => {
 
             <Paragraph
               className={
-                "mt-5 font-semibold hover:text-[#0874c4] duration-300 cursor-pointer"
+                "mt-5 font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer"
               }
             >
               Add New
@@ -80,7 +80,7 @@ const Footer = () => {
 
             <Paragraph
               className={
-                "mt-5 font-semibold hover:text-[#0874c4] duration-300 cursor-pointer"
+                "mt-5 font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer"
               }
             >
               Sign In
@@ -88,7 +88,7 @@ const Footer = () => {
 
             <Paragraph
               className={
-                "mt-5 font-semibold hover:text-[#0874c4] duration-300 cursor-pointer"
+                "mt-5 font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer"
               }
             >
               Sign Up
@@ -97,7 +97,7 @@ const Footer = () => {
         </div>
 
         <div className=" mt-5">
-          <Heading className="text-2xl text-start ml-5 text-[#0874c4]">
+          <Heading className="text-2xl text-start ml-5 text-[#ef7b00]">
             Contact Us
           </Heading>
 
@@ -123,7 +123,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="bg-[#0874c4]">
+      <div className="bg-[#ef7b00]">
         <Paragraph className="text-center text-white py-2">
           Copyright @ 2023 Book Shop
         </Paragraph>

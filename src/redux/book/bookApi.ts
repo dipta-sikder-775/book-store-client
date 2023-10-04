@@ -1,8 +1,9 @@
+import { IUploadImageRes } from "../../types/types";
 import { api } from "../api/apiSlice";
 
 const bookApi = api.injectEndpoints({
   endpoints: (builder) => ({
-    imageUpload: builder.mutation({
+    imageUpload: builder.mutation<IUploadImageRes, any>({
       query: (image) => ({
         url: "/file/upload",
         method: "POST",
@@ -20,6 +21,7 @@ const bookApi = api.injectEndpoints({
           "Content-Type": "application/json",
         },
       }),
+      invalidatesTags: ["book", "wishlist"],
     }),
 
     bookReview: builder.mutation({
@@ -32,7 +34,7 @@ const bookApi = api.injectEndpoints({
           "Content-Type": "application/json",
         },
       }),
-      invalidatesTags: ["book"],
+      invalidatesTags: ["book", "wishlist"],
     }),
 
     bookUpdate: builder.mutation({
@@ -45,7 +47,7 @@ const bookApi = api.injectEndpoints({
           "Content-Type": "application/json",
         },
       }),
-      invalidatesTags: ["book"],
+      invalidatesTags: ["book", "wishlist"],
     }),
 
     deleteBook: builder.mutation({
@@ -57,6 +59,7 @@ const bookApi = api.injectEndpoints({
           "Content-Type": "application/json",
         },
       }),
+      invalidatesTags: ["book", "wishlist"],
     }),
 
     getBooks: builder.query({
@@ -64,6 +67,7 @@ const bookApi = api.injectEndpoints({
         `/book/get-books?searchTerm=${data.search}&sort=${data.filter}`,
       // providesTags: ['search'],
       // invalidatesTags: ['search']
+      providesTags: ["book"]
     }),
 
     getSingleBook: builder.query({

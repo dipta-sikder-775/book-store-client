@@ -2,7 +2,7 @@ import { useFormik } from "formik";
 import Heading from "../components/Heading";
 import Input from "../components/Input";
 import Button from "../components/Button";
-import { IError, IImageResponse } from "../types/types";
+import { IError } from "../types/types";
 import toast from "react-hot-toast";
 import { useAppSelector } from "../redux/hooks";
 import {
@@ -32,20 +32,19 @@ const AddNewBookPage = () => {
 
       try {
         toast.loading("Posting...", { id: "bookAdd" });
-        const image = await imageUpload(formData).unwrap();
-        toast.success(image?.data?.message || "Successfully Posted", {
-          id: "bookAdd",
-        });
+        const imageResponse = await imageUpload(formData).unwrap();
 
-        if (image) {
-          const imageRespone = image as IImageResponse;
+        if (imageResponse?.data) {
           const book = {
             title: values.title,
             genre: values.genre,
             price: parseInt(values.price),
-            image: imageRespone?.data?.data?._id,
+            image: imageResponse?.data?._id,
           };
-          bookPost({ book, token });
+          await bookPost({ book, token }).unwrap();
+          toast.success(imageResponse?.message || "Successfully Posted", {
+            id: "bookAdd",
+          });
           formik.resetForm();
         }
       } catch (error) {
@@ -57,8 +56,8 @@ const AddNewBookPage = () => {
   });
 
   return (
-    <div className="w-full md:w-1/3  rounded-md md:mx-auto my-5 p-5 border border-[#0874c4]">
-      <Heading className="text-center text-3xl text-[#0874c4]">
+    <div className="w-full md:w-1/3  rounded-md md:mx-auto my-5 p-5 border border-[#ef7b00]">
+      <Heading className="text-center text-3xl text-[#ef7b00]">
         Add New Book
       </Heading>
 
@@ -69,7 +68,7 @@ const AddNewBookPage = () => {
           </label>
 
           <Input
-            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-blue-500"
+            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-amber-500"
             id="title"
             name="title"
             type="text"
@@ -85,7 +84,7 @@ const AddNewBookPage = () => {
           </label>
 
           <Input
-            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-blue-500"
+            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-amber-500"
             id="genre"
             name="genre"
             type="text"
@@ -101,7 +100,7 @@ const AddNewBookPage = () => {
           </label>
 
           <Input
-            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-blue-500"
+            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-amber-500"
             id="price"
             name="price"
             type="number"
@@ -115,9 +114,9 @@ const AddNewBookPage = () => {
           <label htmlFor="lastName" className="text-xl">
             Image
           </label>
-          
+
           <Input
-            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-blue-500"
+            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-amber-500"
             id="image"
             name="image"
             type="file"

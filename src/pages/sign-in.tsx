@@ -44,15 +44,15 @@ const SignIn = () => {
         }
     },[isError, isLoading, isSuccess])
     return (
-        <div className="w-full md:w-1/3  rounded-md md:mx-auto md:my-5 p-5 border border-[#0874c4]">
-            <Heading className="text-center text-3xl text-[#0874c4]">
+        <div className="w-full md:w-1/3  rounded-md md:mx-auto md:my-5 p-5 border border-[#ef7b00]">
+            <Heading className="text-center text-3xl text-[#ef7b00]">
                 Sign In
             </Heading>
             <form onSubmit={formik.handleSubmit}>
                 <div className="flex flex-col my-5">
                     <label htmlFor="firstName" className="text-xl">Email</label>
                     <Input
-                        className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-blue-500"
+                        className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-amber-500"
                         id="email"
                         name="email"
                         type="text"
@@ -65,7 +65,7 @@ const SignIn = () => {
                 <div className="flex flex-col my-5">
                     <label htmlFor="lastName" className="text-xl">Password</label>
                     <Input
-                        className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-blue-500"
+                        className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-amber-500"
                         id="password"
                         name="password"
                         type="text"
@@ -77,7 +77,7 @@ const SignIn = () => {
                 <Button className="my-5 w-full" type="submit">Sign In</Button>
             </form>
             <Paragraph className="text-center">
-                New to book shop please <Link to='/signup'><span className="text-blue-500">sign up</span></Link>
+                New to book shop please <Link to='/signup'><span className="text-amber-500">sign up</span></Link>
             </Paragraph>
         </div>
     );

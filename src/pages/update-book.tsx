@@ -56,8 +56,8 @@ const UpdateBookPage = () => {
   });
 
   return (
-    <div className="w-full md:w-1/3  rounded-md md:mx-auto my-5 p-5 border border-[#0874c4]">
-      <Heading className="text-center text-3xl text-[#0874c4]">
+    <div className="w-full md:w-1/3  rounded-md md:mx-auto my-5 p-5 border border-[#ef7b00]">
+      <Heading className="text-center text-3xl text-[#ef7b00]">
         Update Book
       </Heading>
 
@@ -68,7 +68,7 @@ const UpdateBookPage = () => {
           </label>
 
           <Input
-            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-blue-500"
+            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-amber-500"
             id="title"
             name="title"
             type="text"
@@ -84,7 +84,7 @@ const UpdateBookPage = () => {
           </label>
 
           <Input
-            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-blue-500"
+            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-amber-500"
             id="genre"
             name="genre"
             type="text"
@@ -98,9 +98,9 @@ const UpdateBookPage = () => {
           <label htmlFor="lastName" className="text-xl">
             Price
           </label>
-          
+
           <Input
-            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-blue-500"
+            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-amber-500"
             id="price"
             name="price"
             type="number"

@@ -177,7 +177,7 @@ const BookDetailsPage = () => {
       <form onSubmit={formik.handleSubmit}>
         <div className="flex my-5 w-3/5 mx-auto">
           <Input
-            className="border-2 border-gray-400 w-full px-2 py-3 my-5 rounded-lg focus:outline-none focus:border-blue-500"
+            className="border-2 border-gray-400 w-full px-2 py-3 my-5 rounded-lg focus:outline-none focus:border-amber-500"
             id="review"
             name="review"
             type="text"
@@ -187,7 +187,7 @@ const BookDetailsPage = () => {
           />
 
           <button
-            className="ml-2 my-5 font-semibold hover:bg-white border border-[#0874c4] duration-300 hover:text-[#0874c4] bg-[#0874c4] text-white px-4  rounded-lg"
+            className="ml-2 my-5 font-semibold hover:bg-white border border-[#ef7b00] duration-300 hover:text-[#ef7b00] bg-[#ef7b00] text-white px-4  rounded-lg"
             type="submit"
           >
             review
@@ -198,7 +198,7 @@ const BookDetailsPage = () => {
       {book?.reviews?.length ? (
         <div>
           {book.reviews.map((review) => (
-            <Heading className="border border-[#0874c4] py-2 px-5 rounded-md text-lg font-semibold my-3">
+            <Heading className="border border-[#ef7b00] py-2 px-5 rounded-md text-lg font-semibold my-3">
               {review}
             </Heading>
           ))}

@@ -25,14 +25,18 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="bg-[#0874c4] text-white py-2 hidden lg:block">
+      <div className="bg-[#ef7b00] text-white py-2 hidden lg:block">
         <div className=" w-4/5 mx-auto flex justify-between items-center">
           <Heading className={"flex items-center"}>
-            <BsTelephone className="mr-2" /> +88 09613 441122
+            <BsTelephone className="mr-2" /> +88 01704079775
           </Heading>
           <div className="flex">
             <NavbarIcon>
               <BsFacebook />
+            </NavbarIcon>
+
+            <NavbarIcon>
+              <BsInstagram />
             </NavbarIcon>
 
             <NavbarIcon>
@@ -41,10 +45,6 @@ const Navbar = () => {
 
             <NavbarIcon>
               <BsLinkedin />
-            </NavbarIcon>
-
-            <NavbarIcon>
-              <BsInstagram />
             </NavbarIcon>
 
             <NavbarIcon>
@@ -60,14 +60,14 @@ const Navbar = () => {
         <div className="w-4/5 mx-auto flex justify-between items-center">
           <Image
             className={"w-36"}
-            src={"https://i.ibb.co/68bYxQz/book-logo-removebg-preview.png"}
+            src={"/public/images.png"}
           />
 
           <div className="flex items-center">
             <Link to="/home">
               <Paragraph
                 className={
-                  "mr-5 font-semibold hover:text-[#0874c4] duration-300 cursor-pointer"
+                  "mr-5 font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer"
                 }
               >
                 Home
@@ -77,7 +77,7 @@ const Navbar = () => {
             <Link to="/books">
               <Paragraph
                 className={
-                  "mr-5 font-semibold hover:text-[#0874c4] duration-300 cursor-pointer"
+                  "mr-5 font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer"
                 }
               >
                 Books
@@ -89,7 +89,7 @@ const Navbar = () => {
                 <Link to="/add-new-book">
                   <Paragraph
                     className={
-                      "mr-5 font-semibold hover:text-[#0874c4] duration-300 cursor-pointer"
+                      "mr-5 font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer"
                     }
                   >
                     Add New
@@ -105,7 +105,7 @@ const Navbar = () => {
                 <Link to="/signin">
                   <Paragraph
                     className={
-                      "mr-5 font-semibold hover:text-[#0874c4] duration-300 cursor-pointer"
+                      "mr-5 font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer"
                     }
                   >
                     Sign In
@@ -115,7 +115,7 @@ const Navbar = () => {
                 <Link to="/signup">
                   <Paragraph
                     className={
-                      "mr-5 font-semibold hover:text-[#0874c4] duration-300 cursor-pointer"
+                      "mr-5 font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer"
                     }
                   >
                     Sign Up

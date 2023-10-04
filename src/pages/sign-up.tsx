@@ -49,8 +49,8 @@ const SignUp = () => {
   console.log(isError, isLoading, isSuccess);
 
   return (
-    <div className="w-full md:w-1/3  rounded-md md:mx-auto my-5 p-5 border border-[#0874c4]">
-      <Heading className="text-center text-3xl text-[#0874c4]">Sign Up</Heading>
+    <div className="w-full md:w-1/3  rounded-md md:mx-auto my-5 p-5 border border-[#ef7b00]">
+      <Heading className="text-center text-3xl text-[#ef7b00]">Sign Up</Heading>
 
       <form onSubmit={formik.handleSubmit}>
         <div className="flex flex-col my-5">
@@ -59,7 +59,7 @@ const SignUp = () => {
           </label>
 
           <Input
-            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-blue-500"
+            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-amber-500"
             id="name"
             name="name"
             type="text"
@@ -75,7 +75,7 @@ const SignUp = () => {
           </label>
 
           <Input
-            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-blue-500"
+            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-amber-500"
             id="email"
             name="email"
             type="text"
@@ -91,7 +91,7 @@ const SignUp = () => {
           </label>
 
           <Input
-            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-blue-500"
+            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-amber-500"
             id="password"
             name="password"
             type="text"
@@ -109,7 +109,7 @@ const SignUp = () => {
       <Paragraph className="text-center">
         Already have an account please{" "}
         <Link to="/signin">
-          <span className="text-blue-500">sign in</span>
+          <span className="text-amber-500">sign in</span>
         </Link>
       </Paragraph>
     </div>

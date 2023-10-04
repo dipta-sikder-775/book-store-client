@@ -31,7 +31,7 @@ const BooksPage = () => {
         <div className="flex flex-col md:flex-row justify-center my-5 w-3/5 mx-auto">
           <div className="flex justify-between">
             <Input
-              className="border-2 border-gray-400 w-full px-2 py-3 my-5 rounded-full focus:outline-none focus:border-blue-500"
+              className="border-2 border-gray-400 w-full px-2 py-3 my-5 rounded-lg focus:outline-none focus:border-amber-500"
               id="search"
               name="search"
               type="text"
@@ -40,7 +40,7 @@ const BooksPage = () => {
             />
 
             <button
-              className="ml-2 my-5 font-semibold hover:bg-white border border-[#0874c4] duration-300 hover:text-[#0874c4] bg-[#0874c4] text-white px-4  rounded-md"
+              className="ml-2 my-5 font-semibold hover:bg-white border border-[#ef7b00] duration-300 hover:text-[#ef7b00] bg-[#ef7b00] text-white px-4  rounded-md"
               type="submit"
             >
               Search
@@ -51,7 +51,7 @@ const BooksPage = () => {
             onChange={(e) => setFilter(e.target?.value)}
             name=""
             id=""
-            className="border border-[#0874c4] px-2  py-3 md:py-0.5 my-5 rounded-md focus:outline-none focus:border-blue-500  md:ml-3"
+            className="border border-[#ef7b00] px-2  py-3 md:py-0.5 my-5 rounded-md focus:outline-none focus:border-amber-500  md:ml-3"
           >
             <option disabled>Filter By</option>
 

@@ -93,3 +93,24 @@ export interface IBookResponse {
     createdAt?: string;
     updatedAt?: string;
 }
+
+export interface IUploadImageRes {
+    message: string
+    data: IUploadImageData
+  }
+  
+  export interface IUploadImageData {
+    fileName: string
+    fileUrl: string
+    fileExtension: string
+    bucket: string
+    key: string
+    size: number
+    etag: string
+    mimeType: string
+    _id: string
+    createdAt: string
+    updatedAt: string
+    __v: number
+  }
+  

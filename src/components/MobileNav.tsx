@@ -28,7 +28,7 @@ const MobileNavbar = () => {
             <Heading className="text-lg font-semibold flex items-center">
               <Image
                 className="w-28 mr-1"
-                src="https://i.ibb.co/68bYxQz/book-logo-removebg-preview.png"
+                src="/images.png"
               />
             </Heading>
           </Link>
@@ -50,7 +50,7 @@ const MobileNavbar = () => {
         <div
           className={`absolute top-0 duration-700   ${
             isOpen ? "left-0 duration-700" : "left-[-1200px]"
-          } z-30 bg-[#0874c4] w-full p-3  h-[1300px]`}
+          } z-30 bg-[#ef7b00] w-full p-3  h-[1300px]`}
         >
           <p
             className={` absolute top-5 right-2  text-white py-1 cursor-pointer`}
@@ -66,7 +66,7 @@ const MobileNavbar = () => {
               <Paragraph className={" mt-5"}>
                 {" "}
                 <span
-                  className="hover:bg-white font-semibold hover:text-[#0874c4] duration-300 cursor-pointer px-5 py-2 rounded-md"
+                  className="hover:bg-white font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer px-5 py-2 rounded-md"
                   onClick={toggleIsOpen}
                 >
                   Home
@@ -77,7 +77,7 @@ const MobileNavbar = () => {
             <Link to="/books">
               <Paragraph className={"mt-5"}>
                 <span
-                  className="hover:bg-white font-semibold hover:text-[#0874c4] duration-300 cursor-pointer px-5 py-2 rounded-md"
+                  className="hover:bg-white font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer px-5 py-2 rounded-md"
                   onClick={toggleIsOpen}
                 >
                   Books
@@ -90,7 +90,7 @@ const MobileNavbar = () => {
                 <Link to="/add-new-book">
                   <Paragraph className={"mt-5"}>
                     <span
-                      className="hover:bg-white font-semibold hover:text-[#0874c4] duration-300 cursor-pointer px-5 py-2 rounded-md"
+                      className="hover:bg-white font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer px-5 py-2 rounded-md"
                       onClick={toggleIsOpen}
                     >
                       Add New
@@ -101,7 +101,7 @@ const MobileNavbar = () => {
                 <Link to="/wishlist">
                   <Paragraph className={"mt-5"}>
                     <span
-                      className="hover:bg-white font-semibold hover:text-[#0874c4] duration-300 cursor-pointer px-5 py-2 rounded-md"
+                      className="hover:bg-white font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer px-5 py-2 rounded-md"
                       onClick={toggleIsOpen}
                     >
                       Wishlist
@@ -112,7 +112,7 @@ const MobileNavbar = () => {
                 <button
                   onClick={handleLogout}
                   className={
-                    "mr-5 font-semibold hover:bg-[#0874c4] mt-5 border border-[#0874c4] duration-300 text-[#0874c4] bg-white hover:text-white px-4 py-2 rounded-md"
+                    "mr-5 font-semibold hover:bg-[#ef7b00] mt-5 border border-[#ef7b00] duration-300 text-[#ef7b00] bg-white hover:text-white px-4 py-2 rounded-md"
                   }
                 >
                   Log out
@@ -123,7 +123,7 @@ const MobileNavbar = () => {
                 <Link to="/signin">
                   <Paragraph className={"mt-5"}>
                     <span
-                      className="hover:bg-white font-semibold hover:text-[#0874c4] duration-300 cursor-pointer px-5 py-2 rounded-md"
+                      className="hover:bg-white font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer px-5 py-2 rounded-md"
                       onClick={toggleIsOpen}
                     >
                       Sign In
@@ -134,7 +134,7 @@ const MobileNavbar = () => {
                 <Link to="/signup">
                   <Paragraph className={" mt-5"}>
                     <span
-                      className="hover:bg-white font-semibold hover:text-[#0874c4] duration-300 cursor-pointer px-5 py-2 rounded-md"
+                      className="hover:bg-white font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer px-5 py-2 rounded-md"
                       onClick={toggleIsOpen}
                     >
                       Sign Up
