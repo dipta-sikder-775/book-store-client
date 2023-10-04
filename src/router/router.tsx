@@ -2,7 +2,7 @@ import { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 
-const UpdateBookPage = lazy(() => import("../pages/update-book-page"));
+const UpdateBookPage = lazy(() => import("../pages/update-book"));
 const AddNewBookPage = lazy(() => import("../pages/add-new-book"));
 const WishlistPage = lazy(() => import("../pages/wishlist"));
 const BooksPage = lazy(() => import("../pages/books"));
