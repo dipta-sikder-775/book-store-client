@@ -15,7 +15,7 @@ import toast from "react-hot-toast";
 import { useAppSelector } from "../redux/hooks";
 import { useAddWishlistMutation } from "../redux/wishlist/wishlistApi";
 
-const BookDetails = () => {
+const BookDetailsPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { data } = useGetSingleBookQuery(id);
@@ -112,20 +112,6 @@ const BookDetails = () => {
     }
   };
 
-  //   useEffect(() => {
-  //     if (wishlistLoading) {
-  //       toast.loading("Adding...", { id: "book" });
-  //     }
-  //     if (wishlistSuccess) {
-  //       toast.success("Wishlist Added", { id: "book" });
-  //     }
-  //     if (wishlistError) {
-  //       const errorMessage = error as IError;
-  //       const message = errorMessage.data?.message || "Something went wrong";
-  //       toast.error(message, { id: "book" });
-  //     }
-  //   }, [wishlistError, wishlistLoading, wishlistSuccess]);
-
   return (
     <div className="w-4/5 mx-auto my-10">
       <div>
@@ -208,7 +194,7 @@ const BookDetails = () => {
           </button>
         </div>
       </form>
-      
+
       {book?.reviews?.length ? (
         <div>
           {book.reviews.map((review) => (
@@ -222,4 +208,4 @@ const BookDetails = () => {
   );
 };
 
-export default BookDetails;
+export default BookDetailsPage;
