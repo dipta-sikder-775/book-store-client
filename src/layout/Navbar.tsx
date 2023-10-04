@@ -86,7 +86,7 @@ const Navbar = () => {
 
             {email ? (
               <>
-                <Link to="/add-new">
+                <Link to="/add-new-book">
                   <Paragraph
                     className={
                       "mr-5 font-semibold hover:text-[#0874c4] duration-300 cursor-pointer"

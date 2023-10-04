@@ -87,7 +87,7 @@ const MobileNavbar = () => {
 
             {email ? (
               <>
-                <Link to="/add-new">
+                <Link to="/add-new-book">
                   <Paragraph className={"mt-5"}>
                     <span
                       className="hover:bg-white font-semibold hover:text-[#0874c4] duration-300 cursor-pointer px-5 py-2 rounded-md"

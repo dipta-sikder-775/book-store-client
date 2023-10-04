@@ -3,7 +3,6 @@ import Heading from "../components/Heading";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import { IError, IImageResponse } from "../types/types";
-import { useEffect } from "react";
 import toast from "react-hot-toast";
 import { useAppSelector } from "../redux/hooks";
 import {
@@ -62,11 +61,13 @@ const AddNewBookPage = () => {
       <Heading className="text-center text-3xl text-[#0874c4]">
         Add New Book
       </Heading>
+
       <form onSubmit={formik.handleSubmit}>
         <div className="flex flex-col my-5">
           <label htmlFor="firstName" className="text-xl">
             Book Title
           </label>
+
           <Input
             className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-blue-500"
             id="title"
@@ -77,11 +78,12 @@ const AddNewBookPage = () => {
             placeholder="Title"
           />
         </div>
-        
+
         <div className="flex flex-col my-5">
           <label htmlFor="firstName" className="text-xl">
             Book Genre
           </label>
+
           <Input
             className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-blue-500"
             id="genre"
@@ -97,6 +99,7 @@ const AddNewBookPage = () => {
           <label htmlFor="lastName" className="text-xl">
             Price
           </label>
+
           <Input
             className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-blue-500"
             id="price"
@@ -107,10 +110,12 @@ const AddNewBookPage = () => {
             placeholder="Price"
           />
         </div>
+
         <div className="flex flex-col my-5">
           <label htmlFor="lastName" className="text-xl">
             Image
           </label>
+          
           <Input
             className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-blue-500"
             id="image"
