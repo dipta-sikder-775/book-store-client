@@ -42,6 +42,10 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/wishlist",
+        element: <Wishlist />,
+      },
+      {
         path: "/signup",
         element: (
           <Suspense fallback={<p>Loading...</p>}>
