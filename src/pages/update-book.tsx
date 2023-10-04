@@ -7,27 +7,24 @@ import {
   useGetSingleBookQuery,
 } from "../redux/book/bookApi";
 import { IError } from "../types/types";
-import { useEffect } from "react";
 import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
+import { useAppSelector } from "../redux/hooks";
 
 const UpdateBookPage = () => {
-  // const dispatch = useAppDispatch()
   const navigate = useNavigate();
   const { token } = useAppSelector((state) => state.user);
   const { id } = useParams();
   const { data } = useGetSingleBookQuery(id);
-  const [
-    updateBook,
-    { data: updateResponse, isLoading, error, isError, isSuccess },
-  ] = useBookUpdateMutation();
-  console.log;
+  const [updateBook] = useBookUpdateMutation();
+
   const formik = useFormik({
     initialValues: {
       title: data?.data.title,
       genre: data?.data.genre,
       price: data?.data.price,
     },
+
     onSubmit: async (values) => {
       console.log(values);
 
@@ -41,27 +38,22 @@ const UpdateBookPage = () => {
         token,
         id,
       };
-      updateBook(book);
 
-      formik.resetForm();
+      try {
+        toast.loading("Updating...", { id: "updateBook" });
+        const updateBookRes = await updateBook(book).unwrap();
+        toast.success(updateBookRes?.data?.message || "Updated Successfully", {
+          id: "updateBook",
+        });
+        navigate(`/book-details/${id}`);
+        formik.resetForm();
+      } catch (error) {
+        const errorMessage = error as IError
+        const message = errorMessage.data?.message || 'Something went wrong'
+        toast.error(message, { id: 'updateBook' })
+      }
     },
   });
-
-  useEffect(() => {
-    if (isLoading) {
-      toast.loading("Updating...", { id: "signup" });
-    }
-    if (isSuccess) {
-      console.log();
-      toast.success(updateResponse?.message, { id: "signup" });
-      navigate(`/book-details/${id}`);
-    }
-    if (isError) {
-      const errorMessage = error as IError;
-      const message = errorMessage.data?.message || "Something went wrong";
-      toast.error(message, { id: "signup" });
-    }
-  }, [isError, isLoading, isSuccess]);
 
   return (
     <div className="w-full md:w-1/3  rounded-md md:mx-auto my-5 p-5 border border-[#0874c4]">
@@ -74,6 +66,7 @@ const UpdateBookPage = () => {
           <label htmlFor="firstName" className="text-xl">
             Book Title
           </label>
+
           <Input
             className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-blue-500"
             id="title"
@@ -89,6 +82,7 @@ const UpdateBookPage = () => {
           <label htmlFor="firstName" className="text-xl">
             Book Genre
           </label>
+
           <Input
             className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-blue-500"
             id="genre"
@@ -104,6 +98,7 @@ const UpdateBookPage = () => {
           <label htmlFor="lastName" className="text-xl">
             Price
           </label>
+          
           <Input
             className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-blue-500"
             id="price"
