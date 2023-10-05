@@ -4,6 +4,7 @@ import { useGetBooksQuery } from "../redux/book/bookApi";
 import { IBookResponse } from "../types/types";
 import Input from "../components/Input";
 import { useEffect, useState } from "react";
+import { AiOutlineSearch } from "react-icons/ai";
 
 const BooksPage = () => {
   const [search, setSearch] = useState("");
@@ -43,7 +44,7 @@ const BooksPage = () => {
               className="ml-2 my-5 font-semibold hover:bg-white border border-[#ef7b00] duration-300 hover:text-[#ef7b00] bg-[#ef7b00] text-white px-4  rounded-md"
               type="submit"
             >
-              Search
+              <AiOutlineSearch className="w-6 h-6"/>
             </button>
           </div>
 
@@ -51,13 +52,13 @@ const BooksPage = () => {
             onChange={(e) => setFilter(e.target?.value)}
             name=""
             id=""
-            className="border border-[#ef7b00] px-2  py-3 md:py-0.5 my-5 rounded-md focus:outline-none focus:border-amber-500  md:ml-3"
+            className="border border-[#ef7b00] px-1  py-3 md:py-0.5 my-5 rounded-md focus:outline-none focus:border-amber-500  md:ml-3"
           >
             <option disabled>Filter By</option>
 
-            <option value="minPrice">Min Price</option>
+            <option value="minPrice">Low To High</option>
 
-            <option value="maxPrice">Max Price</option>
+            <option value="maxPrice">High To Low</option>
           </select>
         </div>
       </form>

@@ -56,7 +56,7 @@ const AddNewBookPage = () => {
   });
 
   return (
-    <div className="w-full md:w-1/3  rounded-md md:mx-auto my-5 p-5 border border-[#ef7b00]">
+    <div className="w-full md:w-1/3  rounded-md md:mx-auto my-5 p-5 border border-[#ef7b00] shadow-2xl">
       <Heading className="text-center text-3xl text-[#ef7b00]">
         Add New Book
       </Heading>
@@ -68,7 +68,7 @@ const AddNewBookPage = () => {
           </label>
 
           <Input
-            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-amber-500"
+            className="border-2 border-[#ef7b00] w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-amber-500"
             id="title"
             name="title"
             type="text"
@@ -84,7 +84,7 @@ const AddNewBookPage = () => {
           </label>
 
           <Input
-            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-amber-500"
+            className="border-2 border-[#ef7b00] w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-amber-500"
             id="genre"
             name="genre"
             type="text"
@@ -100,7 +100,7 @@ const AddNewBookPage = () => {
           </label>
 
           <Input
-            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-amber-500"
+            className="border-2 border-[#ef7b00] w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-amber-500"
             id="price"
             name="price"
             type="number"
@@ -116,7 +116,7 @@ const AddNewBookPage = () => {
           </label>
 
           <Input
-            className="border-2 border-gray-400 w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-amber-500"
+            className="border-2 border-[#ef7b00] w-full px-2 py-3 my-3 rounded focus:outline-none focus:border-amber-500"
             id="image"
             name="image"
             type="file"

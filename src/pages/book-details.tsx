@@ -14,6 +14,7 @@ import Button from "../components/Button";
 import toast from "react-hot-toast";
 import { useAppSelector } from "../redux/hooks";
 import { useAddWishlistMutation } from "../redux/wishlist/wishlistApi";
+import { AiFillHeart } from "react-icons/ai";
 
 const BookDetailsPage = () => {
   const { id } = useParams();
@@ -115,34 +116,31 @@ const BookDetailsPage = () => {
   return (
     <div className="w-4/5 mx-auto my-10">
       <div>
-        <div className="flex flex-col lg:flex-row md:items-center">
-          <div className="md:h-[600px] md:w-[800px]">
+        <div className="flex flex-col lg:flex-row md:items-center border border-solid border-gray-300 p-4 rounded-md shadow-lg">
+          <div className="md:h-[400px] md:w-[600px]">
             <Image className="h-full w-full" src={book?.image?.fileUrl} />
           </div>
 
           <div className="p-5">
-            <Paragraph className="flex items-center text-xl">
-              <span className="font-semibold ">Title : </span>
-              {book?.title.slice(0, 30)}
+            <Paragraph className="flex items-center text-lg">
+              <span className="font-semibold mr-1 ">Title: </span> {book?.title}
             </Paragraph>
 
-            <Paragraph className="flex items-center text-xl mt-4">
-              <span className="font-semibold ">Genre : </span>
-              {book?.genre}
+            <Paragraph className="flex items-center text-lg mt-4">
+              <span className="font-semibold mr-1 ">Genre: </span> {book?.genre}
             </Paragraph>
 
-            <Paragraph className="flex items-center text-xl mt-4">
-              <span className=" font-semibold">Author : </span>
+            <Paragraph className="flex items-center text-lg mt-4">
+              <span className=" font-semibold mr-1">Author: </span>{" "}
               {book?.author?.name}
             </Paragraph>
 
-            <Paragraph className="flex items-center text-xl mt-4">
-              <span className="font-semibold ">Price : </span>
-              {book?.price}
+            <Paragraph className="flex items-center text-lg mt-4">
+              <span className="font-semibold mr-1 ">Price: </span> {book?.price}
             </Paragraph>
 
-            <Paragraph className="flex items-center text-xl mt-4">
-              <span className=" font-semibold">Date : </span>
+            <Paragraph className="flex items-center text-lg mt-4">
+              <span className=" font-semibold mr-1">Date: </span>{" "}
               {formattedDate ? formattedDate : book?.publicationDate}
             </Paragraph>
 
@@ -160,9 +158,10 @@ const BookDetailsPage = () => {
                 </button>
               </div>
             ) : (
-              <div>
+              <div className="flex justify-center md:justify-start">
                 <Button onClick={handleWishlist} className="mt-10">
-                  Add wishlist
+                  {/* Add wishlist */}
+                  <AiFillHeart />
                 </Button>
               </div>
             )}
@@ -171,7 +170,7 @@ const BookDetailsPage = () => {
       </div>
 
       <Heading className="text-center text-3xl font-bold my-5">
-        Reviews : {book?.reviews?.length}
+        Total {book?.reviews?.length??0} Reviews
       </Heading>
 
       <form onSubmit={formik.handleSubmit}>

@@ -15,25 +15,26 @@ import { AiOutlineMail } from "react-icons/ai";
 const Footer = () => {
   return (
     <div>
-      <div className="bg-[#f2f5fc] md:text-center text-gray-600 p-5 my-5 grid grid-cols-1  md:grid-cols-3">
+      <div className="bg-[rgba(239,123,0,0.1)] md:text-center text-gray-600 p-5 my-5 grid grid-cols-1  md:grid-cols-3">
         <div>
-          <Image
-            className={"w-36"}
-            src={"/images.png"}
-          />
+          <Image className={"w-36"} src={"/images.png"} />
 
-          <Paragraph className="">
-            Welcome to our books website, where the world of literature comes
-            alive. Explore a diverse library of titles, from timeless classics
-            to thrilling mysteries, thought-provoking non-fiction, and
-            captivating fantasy adventures. Whether you're a passionate reader
-            or new to books, there's something here for every literary
-            enthusiast.
+          <Paragraph className="text-justify">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+            porro voluptate culpa dicta delectus magnam reprehenderit deserunt
+            praesentium! Dolor harum repellat dolorem autem labore nostrum sit
+            dignissimos facilis, neque suscipit nemo maxime excepturi
+            necessitatibus pariatur molestias vero magni quod optio culpa
+            recusandae ut quas facere iure minima. Ut, fugit sunt.
           </Paragraph>
 
           <div className="flex">
             <NavbarIcon>
               <BsFacebook />
+            </NavbarIcon>
+
+            <NavbarIcon>
+              <BsInstagram />
             </NavbarIcon>
 
             <NavbarIcon>
@@ -43,56 +44,54 @@ const Footer = () => {
             <NavbarIcon>
               <BsLinkedin />
             </NavbarIcon>
-
-            <NavbarIcon>
-              <BsInstagram />
-            </NavbarIcon>
           </div>
         </div>
 
         <div>
-          <div className="">
+          <div className="mt-3 md:mt-5">
             <Heading className="text-2xl ml-5 text-[#ef7b00]">Our Page</Heading>
 
-            <Paragraph
-              className={
-                "mt-5 font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer"
-              }
-            >
-              Home
-            </Paragraph>
+            <div className="grid gap-x-2 gap-y-1 grid-cols-3 md:max-w-[250px] mx-auto">
+              <Paragraph
+                className={
+                  "mt-5 font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer"
+                }
+              >
+                Home
+              </Paragraph>
 
-            <Paragraph
-              className={
-                "mt-5 font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer"
-              }
-            >
-              Books
-            </Paragraph>
+              <Paragraph
+                className={
+                  "mt-5 font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer"
+                }
+              >
+                Books
+              </Paragraph>
 
-            <Paragraph
-              className={
-                "mt-5 font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer"
-              }
-            >
-              Add New
-            </Paragraph>
+              <Paragraph
+                className={
+                  "mt-5 font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer"
+                }
+              >
+                Add New
+              </Paragraph>
 
-            <Paragraph
-              className={
-                "mt-5 font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer"
-              }
-            >
-              Sign In
-            </Paragraph>
+              <Paragraph
+                className={
+                  "mt-5 font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer"
+                }
+              >
+                Sign In
+              </Paragraph>
 
-            <Paragraph
-              className={
-                "mt-5 font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer"
-              }
-            >
-              Sign Up
-            </Paragraph>
+              <Paragraph
+                className={
+                  "mt-5 font-semibold hover:text-[#ef7b00] duration-300 cursor-pointer"
+                }
+              >
+                Sign Up
+              </Paragraph>
+            </div>
           </div>
         </div>
 

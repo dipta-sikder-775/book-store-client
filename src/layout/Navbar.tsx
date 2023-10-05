@@ -56,11 +56,11 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="bg-[#f2f5fc] py-2 shadow-md hidden lg:block">
+      <div className="bg-[rgba(239,123,0,0.1)] py-2 shadow-md hidden lg:block">
         <div className="w-4/5 mx-auto flex justify-between items-center">
           <Image
             className={"w-36"}
-            src={"/public/images.png"}
+            src={"/images.png"}
           />
 
           <div className="flex items-center">
